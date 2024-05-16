@@ -1,0 +1,855 @@
+:root {
+    --primary-color: #F8B53A;
+    --secondary-color: #E9358F;
+    --third-color: #35E9E9;
+    --forth-color: #94D1DB;
+    --fiveth-color: #F9C8D3;
+    --bg-color: #FFFBF1;
+    --bg-color-yellow: #F9C462;
+    --bg-black-color: #130402;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "MuseoModerno", sans-serif;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFFBF1;
+}
+
+
+/* Queries */
+
+@media screen and (min-width:1024) {
+    h2 {
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h2 {
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+}
+
+
+/* Logo nav */
+header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.container-logo-span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color);
+    justify-content: left;
+}
+
+.logo {
+    max-width: 5rem;
+    align-items: flex-start;
+}
+
+.logo-span {
+    font-size: 20px;
+    font-weight: 500px;
+    margin-top: 10px;
+}
+
+.bi-list {
+    font-size: 2.25rem;
+}
+
+.bi-x {
+    font-size: 2.25rem;
+    padding-right: 40px;
+}
+
+/* el problema esta aca */
+.nav {
+    /* position: absolute; */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    /* display: none; */
+    height: 100%;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 20px;
+    text-align: right;
+}
+
+/* otra idea maravillosa que no funcionó pero
+quedé bien igual (digamos) */
+
+nav-list li a:visited{
+    color: var(--bg-color);
+}
+.nav-list li a:hover{
+    color: var(--third-color);
+}
+
+nav-list li a.active {
+    color: var(--fiveth-color);
+
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    border: 0;
+    font-size: 1.25 rem;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: var(--primary-color);
+        background-color: var(--bg-color);
+    }
+
+    .cerrar-menu {
+        color: var(--secondary-color);
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.05);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        flex-direction: row;
+        align-items: center;
+        /* align-items: end; */
+        gap: 1rem;
+
+    }
+
+    .nav-list li a {
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+}
+
+/* Slider background  */
+.container-imag-background {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* clase de la imagen del background slider */
+.c-b-i {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+    position: absolute;
+    /* top:0; */
+    left: 0;
+    animation: fade 12s ease-in-out infinite alternate;
+}
+
+img:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+img:nth-of-type(2) {
+    animation-delay: 3s
+}
+
+img:nth-of-type(3) {
+    animation-delay: 6s;
+}
+
+img:nth-of-type(4) {
+    animation-delay: 9s;
+}
+
+
+@keyframes changeColor {
+    0% {
+        color: var(--primary-color)
+    }
+
+    20% {
+        color: var(--bg-color);
+    }
+
+    40% {
+        color: var(--forth-color);
+    }
+
+    60% {
+        color: var(--fiveth-color);
+    }
+
+    80% {
+        color: var(--bg-color);
+    }
+
+    100% {
+        color: var(--third-color);
+    }
+}
+
+.heading {
+    font-size: 60px;
+    color: var(--bg-color);
+    position: relative;
+    padding: 3rem;
+    z-index: 100;
+    animation: changeColor 12s infinite;
+}
+
+
+.menu-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu-button {
+    background-color: #F8B53A;
+    color: var(--bg-color);
+    padding: 20px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 300;
+}
+
+.menu-button-container a {
+    text-decoration: none;
+}
+
+/* boton descargar */
+
+.menu-button-descargar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8B53A;
+    color: var(--bg-color);
+    padding: 20px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 200px;
+    z-index: 300;
+    margin: auto;
+}
+
+h1 {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* todo muy lindo pero no logré q se desplace hacia la derecha */
+h1:hover {
+    transform: scaleX(1.1); 
+}
+
+
+/* mapas locales  */
+
+.section-loc {
+    background-color: var(--bg-color-yellow);
+    padding: 36px;
+    color: var(--bg-color);
+}
+
+.section-loc h1 {
+    font-size: 40px;
+    margin-left: 1rem;
+}
+
+.locales-contenedor {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.locales-contenedor h2,
+h3 {
+    margin: 10px;
+}
+
+.mapa {
+    width: 400px;
+    margin: 10px 10px;
+    margin-bottom: 20px;
+}
+
+.mapa:last-child {
+    margin-right: 0;
+    border-radius: 20px;
+}
+
+.mapa iframe {
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+.imag-mapa {
+    margin-bottom: 14%;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .locales-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+h3 {
+    font-family: "MuseoModerno", sans-serif;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: auto;
+}
+
+.container-logo-span-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color);
+    min-height: 100px;
+    width: 100%;
+
+}
+
+.logo-footer {
+    max-width: 5rem;
+}
+
+.logo-span-footer {
+    font-size: 20px;
+    font-weight: 500px;
+    margin-top: 10px;
+}
+
+
+.contacto {
+    margin: auto;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    /* justify-content: end;*/
+}
+
+.contacto ul {
+    list-style: none;
+    margin-left: 2px;
+    align-items: end;
+}
+
+.contacto a {
+    color: var(--secondary-color);
+    padding: 10px;
+    text-decoration: none;
+    justify-content: end;
+}
+
+.bi-envelope,
+.bi-globe-americas,
+.bi-c-circle {
+    color: var(--bg-black-color);
+    font-weight: 400;
+}
+
+
+/* formulario contacto */
+
+#datos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    align-items: center;
+}
+
+#datos .form-control {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+#datos .form-control label {
+    margin-right: 15px;
+    width: 200px;
+    text-align: right;
+}
+
+#datos .form-control input,
+#datos .form-control select {
+    flex: 1;
+    padding: 4px;
+    color: var(--secondary-color);
+}
+
+#datos .form-control input[type="date"] {
+    color: var(--secondary-color);
+    width: 183px;
+}
+
+#datos .form-control select {
+    flex: 1;
+    padding: 4px;
+}
+
+#datos input::placeholder {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+#prefe-contacto select {
+    flex: 1;
+    margin: 0;
+}
+
+#form-wrapper {
+    background-color: var(--bg-color);
+    padding: 2rem;
+}
+
+#form-wrapper h3 {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 40px;
+}
+
+
+#form-wrapper h4 {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 35px;
+    text-align: center;
+}
+
+.form-control {
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+
+#mensaje {
+    color: var(--secondary-color);
+}
+
+.form-control-textarea-container{
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    align-items: center;      
+}
+
+.form-control textarea::placeholder {
+    color: var(--secondary-color);
+    padding-left: 5px;
+    margin-top: 10px;
+}
+
+.form-control-boton-enviar [type=submit] {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.boton-enviar {
+    margin-left: 10px;
+    color: var(--secondary-color);
+    padding-bottom: 70px;
+}
+
+textarea::placeholder {
+    color: var(--secondary-color);
+    padding-left: 4px;
+}
+
+
+.emoticon h4 {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 20px;        
+}
+
+.emoticon h4::after {
+    content: '👇'; 
+}
+
+.formulario-section {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+}
+
+/* esto del gracias x contactarnos despues de enviar el form no funciona  */
+.oculto{
+    display: none;
+}
+
+/* Catering */
+
+.catering-container {
+    background-color: var(--bg-color);
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    max-height: calc(100%-400px);
+    height: 100%;
+    gap: 3rem;
+}
+
+.catering-presupuesto {
+    flex: 1;
+    text-align: left;
+    padding: 3rem;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: calc(100%-400px);
+    height: 100%;
+}
+
+.catering-image {
+    flex: 1;
+}
+
+.catering-presupuesto h3 {
+    color: var(--secondary-color);
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.catering-presupuesto h4 {
+    color: var(--primary-color);
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+.catering-presupuesto a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+/* Menú */
+
+#menu-dulce {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--bg-color-yellow);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.torta {
+    text-align: left;
+    margin: 20px;
+    max-width: 200px;
+}
+
+.imagenes-menu {
+    max-width: 100%;
+}
+
+.titulo-torta,
+.descrip-torta {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #FFFBF1;
+}
+
+.tarta {
+    text-align: left;
+    margin: 20px;
+    max-width: 200px;
+}
+
+.imagen-contenedor {
+    width: fit-content;
+}
+
+.imagen-contenedor img {
+    transition: transform 0.3s ease;
+}
+
+.imagen-contenedor:hover img {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+/* CLIENTES */
+#nuest-clientes {
+    text-align: center;
+    background-color: var(--bg-color);
+    padding: 10px;
+}
+
+#nuest-clientes h2 {
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
+    gap: 2rem;
+    color: var(--secondary-color);
+}
+
+#nuest-clientes h3 {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+#nuest-clientes h2:hover,
+h3:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.contai {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: var(--secondary-color);
+}
+
+
+.client-img {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    /* display: inline-block; */
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 450ms;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.clie-item-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.client-img:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 213, 70, 0.3);
+    transition: opacity 0.3s ease;
+}
+
+.clie-item-detail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: var(--bg-color);
+    text-align: center;
+    opacity: 0;
+    transition: bottom 0.3s ease;
+    opacity: 0;
+}
+
+
+
+.client-img:hover .clie-item-detail {
+    bottom: 0;
+    opacity: 1;
+}
+
+.testimonio p {
+    flex: 1;
+    width: 200px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.clie-item-detail-title p {
+    font-size: 18px;
+}
+
+.clie-item-detail-title::after {
+    font-size: 18px;
+    content: '😊';
+}
+
+/* ------UNA IDEA MUY LINDA PERO QUE NO FUNCIONO---- */
+
+/* .clie-item-detail-title::after {
+    font-size: 18px;
+    content: var(--emoticon);
+}
+
+:root {
+    --emoticon-list: '😊', '😋', '😍', '😎', '🥳', '😄'; 
+    --random-index: calc(random() * 6); 
+    --emoticon: var(--emoticon-list) var(--random-index); 
+} */
+
+.clie-item-detail-title-subtitle p {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.clie-item-detail-subtitle::after {
+    content: '❤️❤️';
+}
