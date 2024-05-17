@@ -511,6 +511,7 @@ footer {
 #datos .form-control select {
     flex: 1;
     padding: 4px;
+    background-color: var(--bg-color);
     color: var(--secondary-color);
 }
 
@@ -532,6 +533,7 @@ footer {
 #prefe-contacto select {
     flex: 1;
     margin: 0;
+    background-color: var(--bg-color);
 }
 
 #form-wrapper {
@@ -759,7 +761,7 @@ h3:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    color: var(--secondary-color);
+    color: var(--secondary-color);    
 }
 
 
