@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     <!-- titulo pag -->
-    <title>Contacto</title>    
+    <title>Contacto</title>
 </head>
 
 <body>
@@ -67,7 +67,8 @@
             <br>
             <br>
 
-            <form action="" method="GET" class="formRegister" id="formRegister">
+
+            <form action="." method="GET" class="formRegister" id="formRegister">
                 <div id="datos">
                     <!-- Nombre -->
                     <div class="form-control">
@@ -109,10 +110,10 @@
                     <div class="form-control">
                         <label for="prefe-contacto">Preferencias de contacto</label>
                         <select name="prefe-contacto" id="prefe-contacto" class="form-select" required>
-                            <option value="nos">Nos contactamos por...</option>
+                            <option value="select">Nos contactamos por...</option>
                             <option value="wa">WhatsApp</option>
                             <option value="ma">Mail</option>
-                            <option value="te">Telefo</option>
+                            <option value="te">Telefo</option> 
                         </select>
                         <div class="error" id="error-prefe-contacto"></div>
                     </div>
@@ -120,25 +121,25 @@
                 <br>
                 <div class="emoticon">
                     <h4>Aquí</h4>
+                </div>
+                <div class="forlumario-section"></div>
+
+                <div class="form-control-textarea-container">
+                    <p><label for="mensaje">Dejá tu mensaje:</label></p>
+                    <textarea id="mensaje" name="mensaje" rows="8" cols="60"
+                        placeholder="Nos encantaría leerte!"></textarea>
+                    <br>
+                    <!-- botón enviar -->
+                    <div class="form-control-boton-enviar">
+                        <input type="submit" value="Enviar">
                     </div>
-                    <div class="forlumario-section"></div>
-                    <form action="/index.html">
-                        <div class="form-control-textarea-container">
-                            <p><label for="mensaje">Dejá tu mensaje:</label></p>
-                            <textarea id="mensaje" name="mensaje" rows="8" cols="60"
-                                placeholder="Nos encantaría leerte!"></textarea>
-                            <br>
-                            <!-- botón enviar -->
-                            <div class="form-control-boton-enviar">
-                                <input type="submit" value="Enviar">
-                            </div>
-                            <br>
-                            <!-- no funciona el mensaje despues de enviar el formulario -->
-                            <div id="mensaje-enviado" class="mensaje-enviado oculto" >Gracias por contactarnos!!!</div>
-                            <br>
-                        </div>
+                    <br>
+                    <!-- no funciona el mensaje despues de enviar el formulario -->
+                    <div id="mensaje-enviado" class="mensaje-enviado oculto">Gracias por contactarnos!!!</div>
+                    <br>
+                </div>
             </form>
-        </section>        
+        </section>
     </main>
     <!-- FOOTER -->
     <footer>
