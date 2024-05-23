@@ -515,7 +515,7 @@ footer {
     align-items: center;
     margin-right: 10px;
     margin-bottom: 20px;
-    width: 100%;
+    
 }
 
 #datos .form-control label {
@@ -563,14 +563,14 @@ footer {
 #form-wrapper h3 {
     color: var(--secondary-color);
     text-align: center;
-    font-size: 7vw;
+    font-size: 4vw;
 }
 
 
 #form-wrapper h4 {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 5vw;
+    font-size: 3vw;
     text-align: center;
 }
 
@@ -720,6 +720,7 @@ textarea::placeholder {
 
 .imagenes-menu {
     max-width: 100%;
+    border-radius: 20px;
 }
 
 .titulo-torta,
